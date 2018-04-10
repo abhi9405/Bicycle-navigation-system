@@ -19,9 +19,21 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  halfRingRightBlink(strip.Color(0,255,0),100);
+  //Case2
+  //halfRingRightBlink(strip.Color(0,255,0),100);
   //halfRingLeftBlinkBold(strip.Color(0,255,0),strip.Color(0,255,0),100);
-  //halfRingLeftBlinkBoldContinue(strip.Color(0,255,0),strip.Color(0,255,0),100);    
+  // Case 1
+  //strip.setPixelColor(1,strip.Color(0,255,0));
+  //strip.show();
+   //Case 3
+  //halfRingRightBlinkBoldContinue(strip.Color(0,255,0),strip.Color(255,0,0),100);    
+  // Case 4
+  //quarterRingRightBlink(strip.Color(0,255,0),100);
+  // Case 5
+   strip.setPixelColor(1,strip.Color(0,255,0));
+   strip.setPixelColor(2,strip.Color(0,255,0));
+   strip.setPixelColor(3,strip.Color(0,255,0));
+  strip.show();
   
 }
 
@@ -170,6 +182,29 @@ void halfRingRightBlinkBoldContinue(uint32_t colorOn,uint32_t colorOff,int durat
   strip.show();
   delay(duration);  
 }
+
+void quarterRingRightBlink(uint32_t color,int duration)
+{  
+  
+  for(int i = 6;i < 12;i++)
+    strip.setPixelColor(i,strip.Color(0,0,0,0));  
+  strip.show();
+  delay(duration);
+  for(int i = 6;i < 12;i++)
+    strip.setPixelColor(i,strip.Color(0,0,0,0));  
+  strip.setPixelColor(7,color);  
+  strip.setPixelColor(10,color);  
+  strip.show();
+  delay(duration);
+  for(int i = 6;i < 12;i++)
+    strip.setPixelColor(i,strip.Color(0,0,0,0));  
+  strip.setPixelColor(8,color);  
+  strip.setPixelColor(9,color);  
+  strip.show();
+  delay(duration);  
+}
+
+
 
 
 
