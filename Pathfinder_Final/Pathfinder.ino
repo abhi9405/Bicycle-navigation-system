@@ -50,7 +50,7 @@
 Adafruit_NeoPixel strip = Adafruit_NeoPixel(12, NEOPIN, NEO_GRB + NEO_KHZ800);
 int ar[] = {S, SW, E, W, SE};
 int i = 0;
-
+int count = 0;
 // ----------------------------------------------------------------------------------- //
 /*=========================================================================
     APPLICATION SETTINGS
@@ -171,7 +171,7 @@ void setup(void)
     delay(500);
   }
 
-  int count = 0;
+
 
 
   // LED Activity command is only supported from 0.6.6
@@ -252,9 +252,31 @@ void loop(void)
 
   Serial.print("R = "); Serial.print(R); Serial.print("  G = "); Serial.println(G); Serial.print("  B = "); Serial.println(B);
 
+R = R * 1.7;
+G = G * 1.7;
+B = B * 0.5;
+
+
+if (R > 255)
+R = 255;
+
+if (G > 255)
+G = 255;
+
+if (B > 255)
+B = 255;
+
+
+if (dist > 10)
+{
   resetStrip(strip.Color(0, 0, 0), 1);
   setPattern(dir, strip.Color(R, G, B), 1);
+}
 
+else {
+  resetStrip(strip.Color(0, 0, 0), 1);
+  setPattern(dir, strip.Color(255, 0, 0), 1);
+}
   count = count + 1;
   Serial.println(count);
 

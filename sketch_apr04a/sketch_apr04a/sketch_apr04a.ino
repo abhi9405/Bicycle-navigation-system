@@ -3,7 +3,7 @@
   #include <avr/power.h>
 #endif
 
-#define PIN 11
+#define PIN 5
 
 // Parameter 1 = number of pixels in strip
 // Parameter 2 = Arduino pin number (most are valid)
@@ -31,7 +31,7 @@ void loop() {
       strip.setPixelColor(0, strip.Color(0, 0, 0));
       strip.setPixelColor(1, strip.Color(0, 0, 0));
       strip.setPixelColor(2, strip.Color(0,0, 0));
-      strip.setPixelColor(3, strip.Color(0, 0, 0));
+      strip.setPixelColor(3, strip.Color(0, 200, 0));
       strip.setPixelColor(4, strip.Color(0, 0, 0));
       strip.setPixelColor(5, strip.Color(0, 0, 0));
       strip.setPixelColor(6, strip.Color(0, 0, 0));
@@ -39,7 +39,7 @@ void loop() {
       strip.setPixelColor(8, strip.Color(0, 0, 0));
       strip.setPixelColor(9, strip.Color(0, 0, 0));
       strip.setPixelColor(10, strip.Color(0, 0, 0));
-      strip.setPixelColor(11, strip.Color(96, 77, 19));
+      strip.setPixelColor(11, strip.Color(0, 77, 240));
       strip.show();
  // colorWipe(strip.Color(255, 0, 0), 500); // Red
  // colorWipe(strip.Color(0, 255, 0), 500); // Green
